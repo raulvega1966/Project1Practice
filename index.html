@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home | Project Allergi</title>
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Bootswatch Styling for Improving the Aesthetics -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/simplex/bootstrap.min.css">
+
+	<!-- Font Awesome CSS Icons (For cool glyphicons) -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1><i class="fa fa-heartbeat"></i> Allergi</h1>
+			<h4>Your food allergy helper</h4>
+			<!-- add image/logo here -->
+		</div>
+	</div>
+	
+	<div class="container allergen-icons-buttons-div text-center" id="buttons-appear-here">
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="cereals" src="assets/images/cereals.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="shellfish" src="assets/images/shellfish.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="egg" src="assets/images/egg.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="fish" src="assets/images/fish.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="milk" src="assets/images/milk.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="peanuts" src="assets/images/peanuts.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="sulfite" src="assets/images/sulfite.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="tree-nuts" src="assets/images/tree-nuts.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="soybean" src="assets/images/soybean.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="sesame-seeds" src="assets/images/sesame-seeds.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="gluten" src="assets/images/gluten.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="lactose" src="assets/images/lactose.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="cereals" src="assets/images/corn.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="cereals" src="assets/images/wheat.png"/>
+		</button>
+		<button class="allergen-icons-button">
+			<img class="allergen-icons" alt="cereals" src="assets/images/coconut.png"/>
+		</button>
+	</div><br><br>
+
+	<div class="container">
+		<div class="col-md-3">
+			
+			<!-- <form> -->
+				<div class="form-group">
+					<label for="add-product">Search your product</label><br>
+					<input id="productInput" type="text" placeholder="Enter product name"/>
+					<button class="btn btn-default" id="add-product" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+				</div>
+				
+			<!-- </form> -->
+		
+			<!-- <form> -->
+				<div class="form-group">
+					<label for="add-upc">Search by UPC/barcode #</label><br>
+					<input id="upcInput" type="text" placeholder="i.e. 0123456789012" />
+					<button class="btn btn-default" id="add-upc" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+				</div>				
+			<!-- </form> -->
+			<!-- <form> -->
+				<div class="form-group">
+					<label for="add-recipe">Search by recipes</label><br>
+					<input id="recipeInput" type="text" placeholder="Enter recipe" />
+					<button class="btn btn-default" id="add-recipe" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+				</div>
+			<!-- </form> -->			
+		</div>
+		<div class="col-md-9">
+			<div id="search-results" class="panel panel-success">
+				<div class="panel-heading">Search Results</div> 
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>Product</th>
+										<!-- We can change this so it is color-based (red, yellow, green) -->
+										<!-- <th>UPC</th> -->
+										<th>UPC</th>
+									</tr>
+								</thead>
+								<tbody id="new-input">
+									<tr> 
+										<td>i.e. BREYERS VANILLA ICE CREAM</td>
+										<td>077567394897</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<br>
+	<div class="container">
+		<div class="col-md-3">
+			<!-- empty space for side bar -->
+		</div>
+
+		<div class="col-md-9 resultPanels displayOff">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span class="thisProduct"> </span> contains the following allergens...
+				</div>
+				<div class="panel-body">
+					<div id="new-UPCInput-Allergen"></div>
+					<div>
+						<img id="CerealsIcon" class="allergen-icons displayOff" data-allergenName="Cereals" src="assets/images/cereals.png"/>
+					</div>
+					<div >
+						<img id="ShellfishIcon" class="allergen-icons displayOff" data-allergenName="Shellfish" src="assets/images/shellfish.png"/>
+					</div>
+					<div >
+						<img id="EggIcon" class="allergen-icons displayOff" data-allergenName="Egg" src="assets/images/egg.png"/>
+					</div>
+					<div>
+						<img id="FishIcon" class="allergen-icons displayOff" data-allergenName="Fish" src="assets/images/fish.png"/>
+					</div>
+					<div >
+						<img id="MilkIcon" class="allergen-icons displayOff" data-allergenName="Milk" src="assets/images/milk.png"/>
+					</div>
+					<div>
+						<img id="PeanutsIcon" class="allergen-icons displayOff" data-allergenName="Peanuts" src="assets/images/peanuts.png"/>
+					</div>
+					<div >
+						<img id="SulfiteIcon" class="allergen-icons displayOff" data-allergenName="Sulfite" src="assets/images/sulfite.png"/>
+					</div>
+					<div>
+						<img id="Tree NutsIcon" class="allergen-icons displayOff" data-allergenName="Tree Nuts" src="assets/images/tree-nuts.png"/>
+					</div>
+					<div >
+						<img id="SoybeanIcon" class="allergen-icons displayOff" data-allergenName="Soybean" src="assets/images/soybean.png"/>
+					</div>
+					<div>
+						<img id="Sesame SeedsIcon" class="allergen-icons displayOff" data-allergenName="Sesame Seeds" src="assets/images/sesame-seeds.png"/>
+					</div>
+					<div>
+						<img id="GlutenIcon" class="allergen-icons displayOff" data-allergenName="Gluten" src="assets/images/gluten.png"/>
+					</div>
+					<div>
+						<img id="LactoseIcon" class="allergen-icons displayOff" data-allergenName="Lactose" src="assets/images/lactose.png"/>
+					</div>
+					<div >
+						<img id="CornIcon" class="allergen-icons displayOff" data-allergenName="Corn" src="assets/images/corn.png"/>
+					</div>
+					<div>
+						<img id="WheatIcon" class="allergen-icons displayOff" data-allergenName="Wheat" src="assets/images/wheat.png"/>
+					</div>
+					<div>
+						<img id="CoconutIcon" class="allergen-icons displayOff" data-allergenName="Coconut" src="assets/images/coconut.png"/>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="col-md-6 resultPanels">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span class="thisProduct"> </span>  contains the following additives...
+					</div>
+					<div class="panel-body">
+						<div id="new-UPCInput-Additive"></div>
+						
+					</div>
+				</div>	
+			</div>			
+		</div>
+		
+	</div>
+
+	<div class="container resultPanels displayOff">
+		<div class="panel panel-info">
+			<div  class="panel-heading">Related items</div>
+				<div id="relatedItems" class="panel-body text-center">				
+				</div>
+		</div>
+	</div>
+
+	<footer class="footer-copyright blue lighten-1 row center">
+  		<div class="container text-center">&copy; 2016 Project Allergi Team</div>
+	</footer>
+		
+	</div>
+
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
