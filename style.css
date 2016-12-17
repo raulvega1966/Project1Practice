@@ -1,16 +1,49 @@
+
+
+
 body {
-	font-family: "Helvetica Neue";
+	font-family: 'Cutive Mono', monospace, "Helvetica";
+	font-size: 18px;
+	background-color: #e2ebf3;
+}
+
+#upcInput {
+	width: 100%;
+	height: auto;
+}
+
+.jumbotron{
+	background-image: url("assets/images/diff-allergens.jpg");
+	background-position: top;
+	background-size: cover;
+	background-color: white;
+	
 }
 
 .jumbotron h1 {
+	font-family: 'Permanent Marker', cursive;
+	background-color: white;
+	/*font-size: 100px;*/
+}
+
+.jumbotron h4{
+	font-family: 'Pacifico', cursive;
 	color: #e00;
 }
 
+.jumbotron a {
+    text-decoration:none;
+}
 .allergen-icons {
 	width: 50px;
 	height: 50px;
 	display: inline-block;
 	
+}
+
+#productInput, #add-product {
+	font-size: 20px;
+	height: 60px;
 }
 
 .allergen-icons-div {
@@ -21,11 +54,16 @@ body {
 	background-color: #e00;
 }
 
-#search-results {
-    width: auto;
+.table-responsive {
     height: 300px;
     overflow: scroll;
 }
+
+/* all panelbody shall have same color ccccccccccccccccccccccccccccccccccccccc*/
+.panel-body {
+	background-color: #f2f2f2;
+}
+/* all panelbody shall have same color ccccccccccccccccccccccccccccccccccccccc*/
 
 .displayOff {
 	display: none;
@@ -35,9 +73,31 @@ body {
 	color: red;
 }
 
-.yellowIngredients{
-	color: #fa5;
+/* all panel headings shall be bold ccccccccccccccccccccccccccc*/
+.panel-heading {
+	font-weight: bold;
 }
+
+/* all panelbody shall have same color*/
+.panel-body {
+	background-color: #f2f2f2;
+	font-weight: bold;
+}
+
+/* all panel headings shall have same color & letters shall be bold ccccccccccccccccccccccccccc*/
+.panel-info>.panel-heading {
+    color: #ffffff;
+    background-color: #dd4814;
+    border-color: #dd4814;
+}
+/* all panel headings shall have same color & letters shall be bold ccccccccccccccccccccccccccc*/
+
+/* yellow ingredient color*/
+.yellowIngredients{
+	color: #ff9900;
+	font-style: bold;
+}
+
 
 .relatedItemsFromWalmart{
 	height: 100px;
@@ -53,3 +113,6 @@ body {
 	padding: 5px;
 	border-radius: 5px;
 }
+
+/*Reference(s):
+Jumbotron image - https://utahfoodallergy.files.wordpress.com/2014/04/food-allergy-graphic-11162.jpg?w=980&h=200&crop=1*/

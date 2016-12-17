@@ -1,17 +1,35 @@
 <!DOCTYPE html>
-<html>
+
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAA English Language  AAAAAAAAAAAAAAAAAAAAAAAAA	-->
+
+<html lang="en-us">
 <head>
-	<title>Home | Project Allergi</title>
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAA  meta charset - Specify the character encoding for the HTML document: AAAAAAAAAAAAAAAAAAAA	-->
+<meta charset="UTF-8">
+
+
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAA    Responsive Design  AAAAAAAAAAAAAAAAAAAA	-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+	<title>Home | Lergix</title>
+	
+	<link rel="stylesheet" type="text/css" href="reset.css">
+
+	<link rel="shortcut icon" href="assets/images/health-plus.ico"/>
 	
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- Bootswatch Styling for Improving the Aesthetics -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/simplex/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css">
 
 	<!-- Font Awesome CSS Icons (For cool glyphicons) -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- Google Font Icons -->
+	<link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Pacifico|Permanent+Marker" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
@@ -20,15 +38,14 @@
 	
 </head>
 <body>
-	<div class="container">
-		<div class="jumbotron">
-			<h1><i class="fa fa-heartbeat"></i> Allergi</h1>
-			<h4>Your food allergy helper</h4>
-			<!-- add image/logo here -->
+	<div class="container text-center">
+		<div class="jumbotron"><a href="https://tanysaur.github.io/Lergix/">
+			<h1>Lergix</h1>
+			<h4>- Your food allergy helper -</h4><br><br><br><br></a>
 		</div>
 	</div>
 	
-	<div class="container allergen-icons-buttons-div text-center" id="buttons-appear-here">
+	<!-- <div class="container allergen-icons-buttons-div text-center" id="buttons-appear-here">
 		<button class="allergen-icons-button">
 			<img class="allergen-icons" alt="cereals" src="assets/images/cereals.png"/>
 		</button>
@@ -74,148 +91,101 @@
 		<button class="allergen-icons-button">
 			<img class="allergen-icons" alt="cereals" src="assets/images/coconut.png"/>
 		</button>
-	</div><br><br>
+	</div><br><br> -->
 
-	<div class="container">
-		<div class="col-md-3">
+	<div class="row">
+		<div class="container">
 			
-			<!-- <form> -->
-				<div class="form-group">
-					<label for="add-product">Search your product</label><br>
-					<input id="productInput" type="text" placeholder="Enter product name"/>
-					<button class="btn btn-default" id="add-product" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-				</div>
-				
-			<!-- </form> -->
-		
-			<!-- <form> -->
-				<div class="form-group">
-					<label for="add-upc">Search by UPC/barcode #</label><br>
-					<input id="upcInput" type="text" placeholder="i.e. 0123456789012" />
-					<button class="btn btn-default" id="add-upc" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-				</div>				
-			<!-- </form> -->
-			<!-- <form> -->
-				<div class="form-group">
-					<label for="add-recipe">Search by recipes</label><br>
-					<input id="recipeInput" type="text" placeholder="Enter recipe" />
-					<button class="btn btn-default" id="add-recipe" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-				</div>
-			<!-- </form> -->			
-		</div>
-		<div class="col-md-9">
-			<div id="search-results" class="panel panel-success">
-				<div class="panel-heading">Search Results</div> 
-					<div class="panel-body">
-						<div class="table-responsive">
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>Product</th>
-										<!-- We can change this so it is color-based (red, yellow, green) -->
-										<!-- <th>UPC</th> -->
-										<th>UPC</th>
-									</tr>
-								</thead>
-								<tbody id="new-input">
-									<tr> 
-										<td>i.e. BREYERS VANILLA ICE CREAM</td>
-										<td>077567394897</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	<br>
-	<div class="container">
-		<div class="col-md-3">
-			<!-- empty space for side bar -->
-		</div>
-
-		<div class="col-md-9 resultPanels displayOff">
-			<div class="col-md-6">
-				<div class="panel panel-primary">
-				<div class="panel-heading">
-					<span class="thisProduct"> </span> contains the following allergens...
-				</div>
-				<div class="panel-body">
-					<div id="new-UPCInput-Allergen"></div>
-					<div>
-						<img id="CerealsIcon" class="allergen-icons displayOff" data-allergenName="Cereals" src="assets/images/cereals.png"/>
-					</div>
-					<div >
-						<img id="ShellfishIcon" class="allergen-icons displayOff" data-allergenName="Shellfish" src="assets/images/shellfish.png"/>
-					</div>
-					<div >
-						<img id="EggIcon" class="allergen-icons displayOff" data-allergenName="Egg" src="assets/images/egg.png"/>
-					</div>
-					<div>
-						<img id="FishIcon" class="allergen-icons displayOff" data-allergenName="Fish" src="assets/images/fish.png"/>
-					</div>
-					<div >
-						<img id="MilkIcon" class="allergen-icons displayOff" data-allergenName="Milk" src="assets/images/milk.png"/>
-					</div>
-					<div>
-						<img id="PeanutsIcon" class="allergen-icons displayOff" data-allergenName="Peanuts" src="assets/images/peanuts.png"/>
-					</div>
-					<div >
-						<img id="SulfiteIcon" class="allergen-icons displayOff" data-allergenName="Sulfite" src="assets/images/sulfite.png"/>
-					</div>
-					<div>
-						<img id="Tree NutsIcon" class="allergen-icons displayOff" data-allergenName="Tree Nuts" src="assets/images/tree-nuts.png"/>
-					</div>
-					<div >
-						<img id="SoybeanIcon" class="allergen-icons displayOff" data-allergenName="Soybean" src="assets/images/soybean.png"/>
-					</div>
-					<div>
-						<img id="Sesame SeedsIcon" class="allergen-icons displayOff" data-allergenName="Sesame Seeds" src="assets/images/sesame-seeds.png"/>
-					</div>
-					<div>
-						<img id="GlutenIcon" class="allergen-icons displayOff" data-allergenName="Gluten" src="assets/images/gluten.png"/>
-					</div>
-					<div>
-						<img id="LactoseIcon" class="allergen-icons displayOff" data-allergenName="Lactose" src="assets/images/lactose.png"/>
-					</div>
-					<div >
-						<img id="CornIcon" class="allergen-icons displayOff" data-allergenName="Corn" src="assets/images/corn.png"/>
-					</div>
-					<div>
-						<img id="WheatIcon" class="allergen-icons displayOff" data-allergenName="Wheat" src="assets/images/wheat.png"/>
-					</div>
-					<div>
-						<img id="CoconutIcon" class="allergen-icons displayOff" data-allergenName="Coconut" src="assets/images/coconut.png"/>
-					</div>
-				</div>
-				</div>
-			</div>
-			<div class="col-md-6 resultPanels">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<span class="thisProduct"> </span>  contains the following additives...
-					</div>
-					<div class="panel-body">
-						<div id="new-UPCInput-Additive"></div>
-						
-					</div>
-				</div>	
-			</div>			
-		</div>
-		
+		    	<div class="input-group">
+			    	<input id="productInput" type="text" class="form-control" placeholder="Enter product name | UPC | barcode #">
+			      	<span class="input-group-btn">
+				        <button class="btn btn-primary" id="add-product" type="button"><i class="glyphicon glyphicon-search"></i></button>
+			      	</span>
+		    	</div><!-- /input-group -->
+		 	
+		</div> <br>
 	</div>
-
+	
+	<!-- Search Results -->
+	<div id="search-results" class="container  displayOff">
+		<h2>Search Results</h2>	
+		<div class="panel panel-success">
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Products</th>
+							</tr>
+						</thead>
+						<tbody id="new-input">
+							<tr> 
+								<!-- <td></td> -->
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="container resultPanels displayOff">
+		<div><h2 id="thisProduct"></h2></div>
+			<!-- Allergen panel -->
+			<div class="col-lg-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Allergens</div><br>
+						<div class="panel-body">
+							<div id="new-UPCInput-Allergen"></div>
+						</div>
+				</div>
+			</div>
+			<!-- Additive panel -->
+			<div class="col-lg-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Additives</div><br>
+						<div class="panel-body">
+							<div id="new-UPCInput-Additive"></div>
+						</div>
+				</div>		
+			</div>	
+	</div>
+	
+	<!-- Related items -->
 	<div class="container resultPanels displayOff">
 		<div class="panel panel-info">
 			<div  class="panel-heading">Related items</div>
-				<div id="relatedItems" class="panel-body text-center">				
-				</div>
+				<div id="relatedItems" class="panel-body text-center"></div>
 		</div>
 	</div>
-
+	
+	<!-- Recent searches -->
+	<div class="container displayOff" id="recentSearches">
+		<h2>Recent searches</h2>
+			<div class="panel panel-default">
+			
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>UPC / Products</th>
+								</tr>
+							</thead>
+							<tbody id="new-recent-search">
+								<tr> 
+									<!-- <td></td> -->
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
 	<footer class="footer-copyright blue lighten-1 row center">
-  		<div class="container text-center">&copy; 2016 Project Allergi Team</div>
+  		<div class="container text-center">&copy; 2016 Lergix Team</div>
 	</footer>
 		
 	</div>
